@@ -1,0 +1,339 @@
+/* Global Styles to minimize repetition */
+
+:root {
+  --cream: #FFF8E7;   
+  --yellow: #F9AF3F;  
+  --pink: #FBA1C4;    
+  --brown: #4A2223;   
+
+  /* Main Google Fonts, each with web-safe fallbacks; uses var for font-family (heading/body)*/
+  --font-heading: "Poppins", "Arial", "Helvetica", sans-serif;
+  --font-body: "Nunito", "Trebuchet MS", "Verdana", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);   /* 60% BACKGROUND */
+  color: var(--brown);              /* TEXT */
+  font-family: var(--font-body);
+  font-size: 1.125rem;              /* 18px at default browser size */
+  font-weight:400;
+  line-height: 1.7;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.3;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: grid;
+  text-align: center;
+}
+
+/* h2: yellow tab label. BACKGROUND yellow, TEXT brown */
+h2 {
+  display: inline-block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background-color: var(--yellow);
+  border: 0.15rem solid var(--brown);
+  border-radius: 0.5rem;
+  padding: 0.25rem 1rem;
+}
+
+/* h3: pink chip. BACKGROUND pink, TEXT brown */
+h3 {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background-color: var(--pink);
+  border-radius: 0.75rem;
+  padding: 0.2rem 0.9rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/* <em> gets a pink highlighter stripe. BACKGROUND pink, TEXT brown */
+em {
+  font-style: italic;
+  background-image: linear-gradient(transparent 55%, var(--pink) 55%);
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+
+/* Page Frame*/
+.wrap {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+
+/* HEADER: NAME and TAGLINE */
+header {
+  background-color: var(--yellow);
+  border-bottom: 0.25rem solid var(--brown);
+}
+
+header .wrap {
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+/* Tagline (Oval Frame): BACKGROUND pink, TEXT brown */
+.tagline {
+  width: fit-content;
+  margin: 0 auto;
+  font-weight: 700;
+  background-color: var(--pink);
+  border: 0.15rem solid var(--brown);
+  border-radius: 2rem;
+  padding: 0.25rem 1.1rem;
+  display: grid;
+  place-items: center;
+  
+}
+
+main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 2rem;
+}
+
+/* Each section is separated by a brown rule (replaces the previous <hr> tags) */
+main section {
+  padding: 2rem 0;
+  border-top: 0.2rem solid var(--brown);
+}
+
+main section:first-child {
+  border-top: 0;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--yellow);
+  border-top: 0.25rem solid var(--brown);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* Links are brown, bold, and underlined, while highlights in pink when hovered. */
+a {
+  color: var(--brown);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
+  text-underline-offset: 0.2rem;
+  overflow-wrap: anywhere;
+}
+
+/* Hover: BACKGROUND pink, TEXT brown */
+a:hover {
+  background-color: var(--pink);
+}
+
+/* Keyboard focus for accessibility: thick brown outline (11.6 : 1 against cream) */
+a:focus-visible {
+  outline: 0.2rem solid var(--brown);
+  outline-offset: 0.2rem;
+  background-color: var(--pink);
+}
+
+
+/* ABOUT ME: FLEXBOX profile photo and profile description  */
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.profile-photo {
+  flex: 0 0 15rem;    /* photo column stays 15rem wide */
+  margin: 0;
+  outline:0
+}
+
+.profile-description {
+  flex: 1 1 0;        /* descriptive text takes the remaining space */
+  min-width: 0;
+}
+
+.profile-description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* THINGS I LOVE, utilizing grids to make three vertical cards */
+.things-i-love-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.things-i-love-card {
+  flex: 1 1 14rem;
+  border: 0.15rem dashed var(--brown);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.things-i-love-card ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.things-i-love-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* PASSION OROJECTS */
+  
+.passion-project {
+  margin-top: 2rem;
+}
+
+.project:first-of-type {
+  margin-top: 1.5rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 1rem 1.25rem;
+  border: 0.15rem solid var(--brown);
+  border-radius: 0.75rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.75rem;
+}
+
+.contact-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Media Frames */
+.project-media-frame {
+  background-color: var(--cream);
+  border: 0.2rem solid var(--brown);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  box-shadow: 0.35rem 0.35rem 0 var(--yellow);
+  margin-bottom: 3rem;
+  
+}
+
+.profile-photo img {
+  display: block;
+  width: 100%;
+  border: 0.2rem solid var(--brown);
+  box-shadow: 0.35rem 0.35rem 0 var(--pink);
+  padding: 0.25rem;
+  border-radius: 0.8rem;
+}
+
+.image-poster img {
+  display: block;
+  width: 100%;
+  border-radius: 0.8rem;
+  display: grid;
+  place-items: center;
+  
+}
+
+/* Responsive 16:9 video box from Google Drive Files */
+.video {
+  position: relative;
+  height: 0;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  display: grid;
+  place-items: center;
+  
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.media-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.9375rem;
+}
+
+/* Media query for small screens - for more accessible and responsive layout */ 
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Profile photo stacks on top of the profile description */
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .profile-photo {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 15rem;
+  }
+
+  .profile-description {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  /* Love cards stack in one column */
+  .things-i-love-grid {
+    flex-direction: column;
+  }
+
+  .things-i-love-card {
+    flex: 0 0 auto;
+  }
+
+  .wrap,
+  main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
